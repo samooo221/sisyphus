@@ -1,0 +1,6 @@
+{
+  "name": "sisyphus",
+  "description": "Agentic study engine for Obsidian vaults — past-paper drills, hostile grading, mistakes→flashcards, longitudinal stats. No app code: the agent is the engine, your vault is the database.",
+  "version": "0.1.0",
+  "author": { "name": "Samuel Pavlovič" }
+}

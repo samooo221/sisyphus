@@ -1,0 +1,11 @@
+{
+  "name": "sisyphus",
+  "owner": { "name": "Samuel Pavlovič" },
+  "plugins": [
+    {
+      "name": "sisyphus",
+      "source": "./",
+      "description": "Agentic study engine for Obsidian vaults — past-paper drills, hostile grading, mistakes→flashcards, longitudinal stats."
+    }
+  ]
+}
