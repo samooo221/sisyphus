@@ -125,7 +125,7 @@ exam:
   final_total: 54                # required — drill point values sum to this
   time_min: 90                   # real exam clock; null when unverified
   time_status: verified
-  corpus: ~/data/exams/IZP       # private source directory, even for synthetic drills
+  corpus: ~/data/fit-exams/IZP   # private source directory, even for synthetic drills
   topics:                        # required — canonical names; every skill joins on them
     - {name: pointers, weight: invest}
     - {name: control-flow, weight: skim}

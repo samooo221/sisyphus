@@ -20,7 +20,7 @@ exam:
   final_total: 54            # required — drill point values sum to this
   time_min: 90               # verified real exam clock; null when unknown
   time_status: verified     # verified | unverified
-  corpus: ~/data/exams/IZP   # optional — dir of past-paper PDFs + question-bank.md
+  corpus: ~/data/fit-exams/IZP   # optional — dir of past-paper PDFs + question-bank.md
   topics:                    # required — canonical topic names; weight: invest|normal|skim (default normal)
     - {name: pointers, weight: invest}
     - {name: control-flow, weight: skim}

@@ -42,8 +42,8 @@ Turns a course into something `drill`, `bank`, and `stats` can operate on. The o
      final_total: 54
      time_min: 90
      time_status: verified           # null time_min + unverified if no evidence
-     corpus: ~/data/exams/IZP
-     drills_dir: ~/data/exams/IZP/drills
+     corpus: ~/data/fit-exams/IZP
+     drills_dir: ~/data/fit-exams/IZP/drills
      sections:
        - {id: final, total: 54, questions: 8, question_points: [6, 8, 6, 8, 10, 6, 4, 6]}
      gates:
