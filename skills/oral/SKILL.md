@@ -1,9 +1,11 @@
 ---
 name: oral
-description: Simulate a FIT project defense (obhajoba) — read the user's own submitted project code, then cross-examine them live one question at a time, from line-reading to hostile robustness probes, and end with a verdict file plus one flashcard per stumble. Use around a project submission ("defend my IZP project", "oral my maze.c", "practice the obhajoba").
+description: Simulate a FIT project defense (obhajoba) — read the user's own submitted project code, then cross-examine them live one question at a time, from line-reading to hostile robustness probes, and end with a verdict file and an own-words review queue. Use around a project submission ("defend my IZP project", "oral my maze.c", "practice the obhajoba").
 ---
 
 # Oral
+
+Read [the learning contract](../../references/learning-contract.md) before acting.
 
 FIT programming projects end in a defense where the examiner pokes at *your* code and watches whether it is yours. This skill is that examiner. **The agent reads and asks — it never writes, rewrites, or fixes a single line.** Pointing at a line and asking about it is the job; editing it would be the ghostwriting the projects exist to prevent.
 
@@ -29,13 +31,13 @@ FIT programming projects end in a defense where the examiner pokes at *your* cod
    questions_asked: 9
    stumbles: 2
    ```
-5. **Turn stumbles into cards.** One atomic `- Q::A` per stumble, appended under a `## From orals` heading. A stumble = your own code you couldn't explain.
+5. **Queue stumbles for explanation.** Ask the student to rewrite the underlying concept; the learning contract gates every card. A verdict or model answer is not a student rewrite.
 6. **Report:** passed or not, the weakest area, cards added.
 
 ## Rules
 
 - **Read-only on the project.** `git status` must be identical after an oral.
 - The no-print rule from drill/bank does **not** apply here — it's the user's code; quoting it back is the point.
-- A stumble about course material rather than this project still becomes a card, worded so it joins an existing `exam.topics` name — never coin a new topic name.
+- A stumble about course material rather than this project still enters the own-words queue, tagged so it joins an existing `exam.topics` name — never coin a new topic name.
 - An oral tests *explanation*, not correctness. A passing project can fail an oral — and that is the finding, not a bug.
-- Grade in a **fresh session** where possible: a session that helped write or debug the project knows the answers it taught and cannot examine fairly.
+- Grade in a **fresh session**: a session that helped write or debug the project knows the answers it taught and cannot examine fairly.

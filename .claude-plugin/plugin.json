@@ -1,6 +1,8 @@
 {
   "name": "sisyphus",
-  "description": "Agentic study engine for Obsidian vaults — past-paper drills, hostile grading, mistakes→flashcards, longitudinal stats. No app code: the agent is the engine, your vault is the database.",
-  "version": "0.2.0",
-  "author": { "name": "Samuel Pavlovič" }
+  "description": "Agentic study engine for Obsidian vaults — private question banks, section gates, fresh-session grading and student-owned explanations before flashcards.",
+  "version": "0.2.5",
+  "author": {
+    "name": "Samuel Pavlovič"
+  }
 }

@@ -1,11 +1,13 @@
 {
   "name": "sisyphus",
-  "owner": { "name": "Samuel Pavlovič" },
+  "owner": {
+    "name": "Samuel Pavlovič"
+  },
   "plugins": [
     {
       "name": "sisyphus",
       "source": "./",
-      "description": "Agentic study engine for Obsidian vaults — past-paper drills, hostile grading, mistakes→flashcards, longitudinal stats."
+      "description": "Agentic study engine — private question banks, exam gates and student-owned explanations before flashcards."
     }
   ]
 }
