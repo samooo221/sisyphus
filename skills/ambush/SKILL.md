@@ -1,6 +1,6 @@
 ---
 name: ambush
-description: Seal a pool of one-line project questions so the weekly cron ambush can fire one at him at a random-feeling moment — random-timing retrieval on his own submitted code. Use when a project is near submission ("ambush pool for my maze.c", "sisyphus ambush IZP <project-dir>").
+description: Seal a pool of one-line questions on his submitted project code for the weekly random-timing ambush. Use near a project submission ("ambush pool for my maze.c").
 ---
 
 # Ambush pool

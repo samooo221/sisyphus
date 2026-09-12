@@ -1,6 +1,6 @@
 ---
 name: gym
-description: Rest-period recall round for the gym — 6–8 short voice-friendly questions from the due cards and the weakest topic, one per rest interval, drops logged and banked after the workout. Use before or during a workout ("gym round", "sisyphus gym IZP", "quiz me at the gym").
+description: Rest-interval recall round for the gym; 6–8 short voice-friendly questions from due cards and the weakest topic. Use before or during a workout ("gym round IZP").
 ---
 
 # Gym

@@ -1,6 +1,6 @@
 ---
 name: drill
-description: Build and grade timed closed-book drills from a course bank, matching known exam sections and gates, with fixed rubrics and fresh-session grading. Queue misconceptions until the student explains them in their own words. Use for exam practice ("new drill", "drill me on IZP", "grade my drill").
+description: Build and grade timed closed-book drills from a course bank with fixed rubrics and fresh-session grading. Use for exam practice ("drill me on IZP", "grade my drill").
 ---
 
 # Drill

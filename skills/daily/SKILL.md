@@ -1,6 +1,6 @@
 ---
 name: daily
-description: Plan or run study within a 90-minute default, with longer question or paper sessions when explicitly chosen. Prioritise problem solving, prerequisites and actual deadlines; compose existing sisyphus activities.
+description: Plan or run a study session (90-minute default) prioritising problem solving, prerequisites and real deadlines, composing other sisyphus activities.
 ---
 
 # Daily

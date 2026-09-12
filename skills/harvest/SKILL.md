@@ -1,6 +1,6 @@
 ---
 name: harvest
-description: Collect a course's past exams and practice material from public web sources into the course's corpus directory (outside the vault), so `bank` has something to ingest — official FIT pages, student archives, GitHub topic repos. Use when a corpus dir is empty or thin ("harvest IZP", "get past papers for IEL") — normally once, in week 1 of term.
+description: Collect a course's public past exams and practice material into its corpus dir so bank can ingest them. Use when a corpus is empty or thin ("harvest IZP").
 ---
 
 # Harvest

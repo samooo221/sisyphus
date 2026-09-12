@@ -1,6 +1,6 @@
 ---
 name: bank
-description: Ingest the user's own past-paper PDFs into a per-course question bank that `drill new` draws from — topic-tagged questions with point values and answers, stored in the corpus directory outside the vault. Use when past papers land in the corpus dir ("bank the IZP papers", "sisyphus bank IZP").
+description: Ingest his past-paper PDFs into a per-course question bank that drill draws from. Use when papers land in the corpus dir ("bank the IZP papers").
 ---
 
 # Bank

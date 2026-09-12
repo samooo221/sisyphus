@@ -1,6 +1,6 @@
 ---
 name: oral
-description: Simulate a FIT project defense (obhajoba) — read the user's own submitted project code, then cross-examine them live one question at a time, from line-reading to hostile robustness probes, and end with a verdict file and an own-words review queue. Use around a project submission ("defend my IZP project", "oral my maze.c", "practice the obhajoba").
+description: Simulate a FIT project defense on his submitted code, one question at a time up to hostile robustness probes, ending in a verdict file. Use around submission ("oral my maze.c", "practice the obhajoba").
 ---
 
 # Oral

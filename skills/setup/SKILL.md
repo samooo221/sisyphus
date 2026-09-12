@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Configure a course for drilling — interview the user, then write the `exam:` block into the course's MOC frontmatter (scaffolding the vault folders and a bare MOC first if needed). Use when adding a course to sisyphus ("set up IZP", "sisyphus setup") or when drill/bank report a missing `exam:` block.
+description: Configure a course for drilling; interview him, then write the `exam:` block into the course MOC, scaffolding vault folders if needed. Use when adding a course or when drill/bank report a missing `exam:` block.
 ---
 
 # Setup

@@ -1,6 +1,6 @@
 ---
 name: stats
-description: Regenerate a per-course progress note from drill and exam result frontmatter — score curve over time, per-topic breakdown, real-exam rows for the drill-vs-reality comparison. Use for "how am I trending", "sisyphus stats", or after grading a drill.
+description: Regenerate a course's progress note from drill and exam results; score curve, per-topic breakdown, drill-vs-real-exam rows. Use for "how am I trending" or after grading a drill.
 ---
 
 # Stats

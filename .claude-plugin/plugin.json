@@ -1,7 +1,7 @@
 {
   "name": "sisyphus",
   "description": "Agentic study engine for Obsidian vaults — private question banks, section gates, fresh-session grading and student-owned explanations before flashcards.",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": {
     "name": "Samuel Pavlovič"
   }

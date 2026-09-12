@@ -1,6 +1,6 @@
 ---
 name: moonshot
-description: The past-exam acquisition evening — build a click-list of every obtainable past exam for a course (official pages first, then public student archives), run `harvest` for the public ones, and hand HIM a precise checklist for the login-only ones. Use once per course, or when a corpus feels thin ("moonshot IEL", "get every IZP past exam").
+description: Past-exam acquisition evening; click-list of every obtainable past exam, harvest the public ones, checklist for login-only ones. Use once per course ("moonshot IEL").
 ---
 
 # Moonshot

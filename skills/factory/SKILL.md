@@ -1,6 +1,6 @@
 ---
 name: factory
-description: Produce checked variations of a weak problem type for high-volume practice, using independent verification before a sealed pack reaches the student. Use for "10 more like this" or "factory IZP loops".
+description: Produce independently checked variations of a weak problem type for volume practice. Use for "10 more like this" or "factory IZP loops".
 ---
 
 # Factory

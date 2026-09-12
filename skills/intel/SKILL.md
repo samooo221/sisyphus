@@ -1,6 +1,6 @@
 ---
 name: intel
-description: Cohort intel sweep — public-only scan of a course's official pages, faculty news, and student spaces for assignment clarifications, deadline changes, and post-test reactions, reported as ≤10 dated bullets. Use weekly or before a test week ("intel IEL", "sisyphus intel", "what's new at FIT").
+description: Public-only sweep of a course's official pages and student spaces for clarifications, deadline changes and post-test reactions, as up to 10 dated bullets. Use weekly or before a test ("intel IEL").
 ---
 
 # Intel

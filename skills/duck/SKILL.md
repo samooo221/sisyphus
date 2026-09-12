@@ -1,6 +1,6 @@
 ---
 name: duck
-description: Rubber-duck debugging for C projects — reads the failing code and its fitcheck evidence, takes the user's hypothesis first, then diagnoses down to the line and the memory mechanism without ever writing or showing the fix. Use when a test fails or a segfault bites ("duck my maze.c", "sisyphus duck fitcheck-out/2023-izp-maze/07-test-wall-mismatch-invalid", "why does this crash").
+description: Rubber-duck a failing C project; takes his hypothesis first, diagnoses to the line and memory mechanism, never shows the fix. Use on a failed test or segfault ("duck my maze.c").
 ---
 
 # Duck

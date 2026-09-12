@@ -1,6 +1,6 @@
 ---
 name: tutor
-description: Daily Socratic tutoring — prerequisite-aware topic choice, retrieval warmup, one hint rung per attempt, and a fresh unaided closing check. Cards require the student's own explanation. Use for "tutor me IZP" or "help me understand this without giving me the answer".
+description: Daily Socratic tutoring; prerequisite-aware topic, retrieval warmup, one hint rung per attempt, unaided closing check. Use for "tutor me IZP" or help without the answer.
 ---
 
 # Tutor

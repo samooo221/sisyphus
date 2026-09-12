@@ -1,6 +1,6 @@
 ---
 name: preview
-description: Pre-lecture primer — turn published slides (or the next course topic) into a 10-question prequiz with folded answers plus a short "watch for" list, so the lecture is second contact instead of first. Use the evening before a lecture ("preview IEL", "sisyphus preview IMA1 limits", "preview tomorrow's slides").
+description: Pre-lecture primer; 10-question prequiz with folded answers plus a watch-for list from published slides or the next topic. Use the evening before a lecture ("preview IEL").
 ---
 
 # Preview

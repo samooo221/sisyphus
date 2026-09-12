@@ -1,6 +1,6 @@
 ---
 name: stress
-description: Adversarial explanation check — he explains a concept closed-book, an attacker seat hunts for what's wrong or misleading in the explanation, he defends, and an auditor seat rules on whether attacks were fair and defenses held. Use on concepts he thinks he already knows ("stress-test my pointers explanation", "sisyphus stress IEL RC transients").
+description: Adversarial explanation check; he explains closed-book, an attacker seat hunts flaws, he defends, an auditor rules. Use on concepts he thinks he knows ("stress-test my pointers explanation").
 ---
 
 # Stress

@@ -1,6 +1,6 @@
 ---
 name: lecture
-description: Process a messy pass-1 lecture note (plus optional slides PDF) into the vault's pass-2 artifacts — answers to the `> [!question]` cues, atomic concept-note drafts the user confirms in their own words, MOC links, and flashcards appended to the course deck. Use on lecture days ("process my IZP lecture", "sisyphus lecture IDM today's note").
+description: Turn a messy pass-1 lecture note (plus optional slides) into pass-2 vault artifacts; cue answers, own-words concept drafts, MOC links, flashcards. Use on lecture days ("process my IZP lecture").
 ---
 
 # Lecture

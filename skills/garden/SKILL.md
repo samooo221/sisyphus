@@ -1,6 +1,6 @@
 ---
 name: garden
-description: Weekly interleaved quiz across two or more courses — mixed problem types one at a time, weighted toward the topics where drill results show weakness, graded strictly at the end, misconceptions queued for the student's own explanation. Use for the weekly mixed session ("garden", "sisyphus garden IZP IDM", "quiz me across my courses").
+description: Weekly interleaved quiz across courses, weighted toward drill-revealed weaknesses, graded strictly at the end. Use for the weekly mixed session ("garden IZP IDM").
 ---
 
 # Garden
