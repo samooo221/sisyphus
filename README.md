@@ -58,7 +58,7 @@ In Claude Code:
 For a local checkout, the installed Claude Code CLI also supports:
 
 ```sh
-claude plugin marketplace add ~/projects/sisyphus
+claude plugin marketplace add ~/vutsamko/sisyphus
 claude plugin install sisyphus@sisyphus --scope user
 claude plugin details sisyphus@sisyphus
 ```
