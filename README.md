@@ -254,8 +254,8 @@ curated resource guides and private searchable sources. Winter FIT banks retain
 400 indexed items, 397 eligible candidates (selected PDF questions still require visual checks). A separate opening collection now has 48 checked external questions and 24 independently checked original C questions, issued as 12 short practice packs. Other external document indexes are not claims of
 question-level banking. Multiple same-day papers, whole variants, repeat/exposure
 records and chosen longer sessions are specified. See the local
-[resource library](/home/tryhardstation/projects/fit-study/resources/README.md).
-The [opening practice guide](/home/tryhardstation/projects/fit-study/first-week-2026-09-12/README.md) lists the packs and their prerequisite order. Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
+[resource library](/home/tryhardstation/vutsamko/fit-study/resources/README.md).
+The [opening practice guide](/home/tryhardstation/vutsamko/fit-study/first-week-2026-09-12/README.md) lists the packs and their prerequisite order. Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
 These are agent procedures, not access controls or evidence of student mastery.
 No new student sitting or live grading has been demonstrated.
 
