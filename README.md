@@ -20,10 +20,10 @@ block    → corpus     bank       + key + answer sheet                         
   preview ──▶ pre-lecture prequiz with folded answers + a watch-for list, so lectures land as review
   moonshot ──▶ the past-exam evening: public harvest, then a precise click-list for the login-only archive
   gym ──▶ rest-period recall round — 6–8 short voice-friendly questions, banked after the last set
-  factory ──▶ generator seat mass-produces weak-topic problems, a cross-vendor judge vetts them, you solve
+  factory ──▶ more problems on a weak topic — existing exercises or new ones, keys independently checked
   stress ──▶ adversarial explanation check — you explain, an attacker seat attacks, an auditor rules
   intel ──▶ weekly public-only sweep of course/faculty news and cohort reactions (never leaks)
-  ambush ──▶ one sealed question about your own project, fired by cron once a week
+  ambush ──▶ one sealed question about your own project, for a weekly schedule you supply
   lookup ──▶ a factual question answered from the local search index, sources named
 ```
 
@@ -32,7 +32,7 @@ block    → corpus     bank       + key + answer sheet                         
 3. **`sisyphus bank <COURSE>`** — ingests your own past-paper PDFs into a topic-tagged question bank (kept outside the vault — exam text is copyrighted).
 4. **`drill new <COURSE>`** — a sealed, timed, closed-book paper matching the real exam's point split, weighted toward the topics you marked `invest`. The agent never prints a question into chat: files only. Then you answer it offline, real clock, no notes, no AI.
 5. **`drill grade <COURSE> <attempt-id|batch-id>`** — in a fresh session (the one that wrote the key can't invigilate), graded hostilely against a point breakdown fixed at creation time. Misconceptions enter a review queue; cards are appended only after your own correct explanation.
-6. **`sisyphus lecture <COURSE> <note> [slides.pdf]`** — the daily pass-2: answers your `> [!question]` cues, drafts atomic concept notes, and writes cards only after you've rewritten each note's core in your own words.
+6. **`sisyphus lecture <COURSE> <note> [slides.pdf]`** — for the *sieve* courses, the ones that actually fail people; the daily pass-2: answers your `> [!question]` cues, drafts atomic concept notes, and writes cards only after you've rewritten each note's core in your own words.
 7. **`sisyphus oral <COURSE> <project-dir>`** — a mock obhajoba: reads your submitted project and cross-examines you one question at a time, ending in a verdict file; stumbles await your own explanation before becoming cards. Read-only on your code, always.
 8. **`sisyphus stats`** — score curve over time and per-topic breakdown, computed from result frontmatter, with your real exam results and oral verdicts interleaved.
 9. **`sisyphus tutor <COURSE> [topic]`** — the daily teaching session: retrieval warmup from the deck, problems worked on a hint ladder (one rung per attempt), and a mandatory closing problem solved completely unaided. Confusions await your own explanation before becoming cards. The tutor never states the answer — see the rules below.
@@ -45,7 +45,7 @@ block    → corpus     bank       + key + answer sheet                         
 16. **`sisyphus factory <COURSE> [topic] [count]`** — checked variations, existing author exercises or simulators for extra volume. Generated keys need independent verification; model routes are used only when available and authorized.
 17. **`sisyphus stress <COURSE> <topic>`** — adversarial explanation check: you explain closed-book, an attacker seat finds the holes, you defend, an auditor seat rules on fairness. Broken defenses enter the own-words queue.
 18. **`sisyphus intel [COURSE ...]`** — the weekly public-only intel sweep: official course news, faculty calendar changes, cohort reactions. Leaked assessment content is dropped and named as dropped.
-19. **`sisyphus ambush <COURSE> <project>`** — seals a 10-question pool about your own code; a weekly cron (Wednesday ~17:07) fires exactly one. Random-timing retrieval, tiny blast radius, ignorable by design.
+19. **`sisyphus ambush <COURSE> <project>`** — seals a 10-question pool about your own code, for a weekly schedule *you* set up (the plugin installs no scheduler) to fire exactly one. Random-timing retrieval, tiny blast radius, ignorable by design — outcomes are deliberately not recorded and `stats` does not see them.
 20. **`sisyphus lookup <question>`** — the answer layer over `prvak search`, the local keyword index of your own extracted course texts, library documents and research findings. Turns a question into a few queries, reads the passages, answers in plain words and names its sources. Only what was found; no exam-bank material, ever.
 
 ## Install
@@ -71,7 +71,7 @@ The natural-language requests below refer to those prose skills, not shell execu
 After changing the source checkout, update the installed plugin and verify its cached
 skill files; do not assume an old cache automatically follows local edits.
 
-Requirements: an Obsidian vault (any layout — see below) and the [Spaced Repetition](https://github.com/st3v3nmw/obsidian-spaced-repetition) plugin for the flashcard half of the loop.
+Requirements: an Obsidian vault (any layout — see below) and the [Spaced Repetition](https://github.com/st3v3nmw/obsidian-spaced-repetition) plugin for the flashcard half of the loop. One skill has an extra requirement: `lookup` needs `prvak` — a separate local CLI — with its `search` command and a built index. Without it, `lookup` has nothing to read and says so; the other eighteen skills are unaffected.
 
 ## Paper practice and the resource library
 
@@ -253,13 +253,34 @@ Follow this and, at semester's end, "is the tool working?" is a read-and-plot jo
 
 ## Status
 
+**0.3.1, 19 September 2026 — consistency pass.** No new skills. A review of the whole
+plugin found places where two skills disagreed, or where a skill promised something the
+repository does not provide; those are now fixed in the wording rather than papered over:
+`stress` no longer hardcodes model IDs and applies `factory`'s route rule (available and
+authorized only, never paid); `ambush` no longer promises a Wednesday delivery the plugin
+does not install, and states that its outcomes are deliberately unrecorded; `harvest`
+retries a failed source instead of treating it as acquired; `moonshot` uses `harvest`'s
+filename scheme and allocates every download name before the checklist is handed over,
+against the corpus dir and the rest of the list; releasing a reserved paper writes a
+`released` event rather than rewriting the inventory, so the reserve count stays
+enforceable and `drill` can tell permission from exposure; `oral` and the real-exam
+record allocate a sequence number like `drill` does, so two events on one day cannot
+collide; `drill grade` distinguishes an interrupted result from a finished one; `tutor`
+now writes the `learning-check` record that `stats` was already reading, naming the
+stable id its pending-queue entry now carries; `lookup` quotes
+its `*` terms (unquoted, zsh kills the command outright), names all three meanings of
+exit 1, and stops pointing at one machine's prvak checkout. `prvak` is now listed as
+`lookup`'s requirement. Nothing in this release changes what any skill does when it works.
+
 Local v0.2.5 preparation, 12 September 2026: all ten first-year FIT courses have
 curated resource guides and private searchable sources. Winter FIT banks retain
 400 indexed items, 397 eligible candidates (selected PDF questions still require visual checks). A separate opening collection now has 48 checked external questions and 24 independently checked original C questions, issued as 12 short practice packs. Other external document indexes are not claims of
 question-level banking. Multiple same-day papers, whole variants, repeat/exposure
-records and chosen longer sessions are specified. See the local
-[resource library](/home/tryhardstation/vutsamko/fit-study/resources/README.md).
-The [opening practice guide](/home/tryhardstation/vutsamko/fit-study/first-week-2026-09-12/README.md) lists the packs and their prerequisite order. Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
+records and chosen longer sessions are specified. The author's own resource library and
+opening practice guide (`~/vutsamko/fit-study/resources/` and
+`~/vutsamko/fit-study/first-week-2026-09-12/`) are local to that machine and are not part
+of this repository — the paths are named here for the record, not as links to follow.
+Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
 These are agent procedures, not access controls or evidence of student mastery.
 No new student sitting or live grading has been demonstrated.
 

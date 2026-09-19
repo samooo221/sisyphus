@@ -21,7 +21,7 @@ Fills the course's `exam.corpus` with the user's own copies of publicly availabl
    - Respect robots.txt and each source's license; a few requests per host, not a flood.
    - Do not collect student solutions to current FIT graded projects as study fuel. Released instructor practice solutions and openly licensed reference examples may be kept privately with provenance; do not call community answers official. No credential use or access to instructor-only answer manuals.
 4. **File naming:** `YYYY-<short-desc>.pdf` (year from the paper or its URL), `undated-<short-desc>.pdf` when unknown. Non-PDF text (gists, web tests) becomes `.md` with its source URL on the first line. If `pdftotext` (poppler) is installed, also emit `.txt` beside each PDF — `bank` reads PDFs, but text greps faster.
-5. **Idempotent:** skip a source already cited in `<corpus>/SOURCES.md`; append one bullet per fetch: file · origin URL · date · license note.
+5. **Idempotent:** skip a source only when SOURCES.md records it as **successfully fetched** — a line with a local file behind it. A `- [ ] manual:` line, an unreachable source and any other failure note are the opposite of acquired, so they are retry candidates, not skips; a failed download must never be mistaken for a held paper. Append one bullet per fetch: file · origin URL · date · license note.
 6. **Report** counts only: files added per source, how many manual/logged-in TODOs remain, next step (`sisyphus bank <COURSE>` once the user has what they need).
 
 ## Rules

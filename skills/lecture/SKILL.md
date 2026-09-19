@@ -24,4 +24,4 @@ The second pass is where lectures become knowledge: same-day processing of the l
 - **The raw note is read-only.** Pass-1 mess stays as captured.
 - **Never state a fact the materials don't contain** without marking it inline `[!] verify` — a lecture processor that textbook-splains manufactures confident errors.
 - **Append-only** to flashcard files; never touch the HTML scheduling comments the Spaced Repetition plugin appends.
-- Full pass-2 is for the sieve courses only — for anything else the Study Loop's 10-minute skim is the right tool, and saying so is part of the skill.
+- Full pass-2 is for the **sieve courses** only — the ones that actually fail people and so deserve the expensive treatment (for this student: IZP and IUS in winter, IMA1 in summer). For anything else the Study Loop's 10-minute skim is the right tool, and saying so is part of the skill.

@@ -7,8 +7,12 @@ description: Answer a factual question about FIT rules, courses or study materia
 
 Read [the learning contract](../../references/learning-contract.md) before acting.
 
+This skill needs `prvak` — a separate local CLI — with its `search` command available and
+an index built. Without it there is nothing to answer from, and the skill says so instead
+of guessing. Every other sisyphus skill works without it.
+
 `prvak search` is a local keyword index (SQLite FTS5, accent-insensitive, no model, no
-network) over ~28k passages of text already extracted on this machine: course-card and
+network) over the passages of text already extracted on this machine: course-card and
 research **findings**, 225 **library** documents, and the **materials** extracted from
 course slides and scripts. It returns passages. This skill is the other half — turning
 those passages into a plain answer with its sources named, and admitting when they say
@@ -27,13 +31,22 @@ nothing. It never invents the part the index did not have.
 3. **Run each query:**
 
    ```sh
-   prvak search ukazatel* aritmetik* --course IZP --json --limit 8
+   prvak search 'ukazatel*' 'aritmetik*' --course IZP --json --limit 8
    ```
 
+   **Quote every term with a `*`.** Unquoted, the shell expands it against the filenames in
+   the current directory before `prvak` ever sees it — and in zsh a pattern that matches
+   nothing kills the command outright (`zsh: no matches found`).
+
    All words must match; with no match it retries as OR and sets `"relaxed": true`.
-   Exit 1 means nothing found **or** no index — `prvak search --status` tells you which.
-   If the `prvak` on PATH predates `search`, fall back to
-   `PYTHONPATH=$HOME/vutsamko/uni/prvak/src python3 -m prvak.cli search ...`.
+   Exit 1 means one of three things — nothing found, no index built, or SQLite without
+   FTS5 support. `prvak` names the reason on stderr; read it. `prvak search --status`
+   distinguishes the first two, but it cannot help with the third, which fails before
+   `--status` is ever consulted.
+   `prvak search` needs a `prvak` recent enough to have the `search` command (a stale
+   `pip --user` install often is not). If the `prvak` on PATH predates it, run the
+   module out of a local prvak checkout instead:
+   `PYTHONPATH=<prvak-checkout>/src python3 -m prvak.cli search ...`.
 4. **Read the hits; open the best 1–3 sources when a snippet is too short to answer from.**
    - `materials` — `source` is already the extracted `.txt`; read it directly, `locator` is
      the chunk number.

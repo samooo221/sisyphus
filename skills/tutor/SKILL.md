@@ -20,7 +20,21 @@ The daily counterpart to drill: drills measure, tutor teaches. The evidence this
    - *Rung 3 — one worked sub-step:* do exactly one step that does not give the final answer, then hand back. If only the final step remains, ask a smaller prerequisite question instead.
    Wait for the student's attempt after every rung. A wrong answer gets a question that makes the error visible, not "no, actually…".
 5. **The unaided check.** End with **one fresh problem the student solves completely alone** — no hints, no ladder, silence from you until they state a full answer. Then assess this conversational closing check; a sealed drill still requires a fresh grading session. If the check fails, state what the attempt did demonstrate and which step remains uncertain. Leave the stage pending; a failed check does not erase earlier progress. If the budget ends or no answer arrives, record the check as pending, not failed, and do not claim mastery.
-6. **Own words before cards.** Ask the student to write “what I now believe and why”. Correctness plus their own wording unlocks a card for that concept under the learning contract. Otherwise leave a plain pending misconception. Record the closing-check evidence in the track's existing ledger; no passed check means no completed stage.
+6. **Own words before cards.** Ask the student to write “what I now believe and why”. Correctness plus their own wording unlocks a card for that concept under the learning contract. Otherwise leave a plain pending misconception. Record the closing-check evidence in the track's existing ledger; no passed check means no completed stage. **When a session closes a misconception that was already pending**, also append a `<drills_dir>/<date>-NN-learning-check.md` record so `stats` can show it as resolved — this is the only writer of that record:
+
+   ```yaml
+   ---
+   type: learning-check
+   course: IZP
+   date: 2026-10-02
+   misconception_id: <the pending-learning.md entry's id; an older entry logged without one gets an id assigned and written into that entry first, so both sides carry the same label>
+   own_words: true            # did the student's own rewrite pass the gate?
+   unaided_transfer: true     # did the closing check on a fresh problem hold?
+   evidence_path: <path to the pending entry or the session note>
+   ---
+   ```
+
+   No record for a misconception raised and resolved inside the same session, and none when the check did not pass — an unresolved misconception stays pending and unrecorded.
 7. **Report:** topic(s) covered, unaided-check verdict, cards added.
 
 ## Rules

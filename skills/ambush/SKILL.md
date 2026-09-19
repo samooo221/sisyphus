@@ -32,8 +32,12 @@ just the armory: a sealed pool the cron session draws from.
    ```
    One line per entry, `used:` flipped to the date by whoever fires it. Overwrite the
    file only with his say-so — an existing pool may still have live rounds.
-3. **Report:** pool path, 10 questions sealed, and the one-liner: the weekly cron fires
-   Wednesdays ~17:07 and asks exactly one of these.
+3. **Report:** pool path, 10 questions sealed, and **whether anything is actually set up
+   to fire them.** The plugin installs no scheduler; the weekly round comes from the
+   user's own cron or timer, outside sisyphus. Check for one and say what you found:
+   "your weekly job will draw one of these" if it exists, or "no scheduler found — the
+   pool is armed but nothing will fire it until you add one" if it does not. Never
+   promise a Wednesday delivery the repo does not provide.
 4. **Optional second pool** before the real obhajoba: regenerate against the *submitted*
    version — whether the first pool's answers stuck is the same measurement orals use.
 
@@ -42,7 +46,16 @@ just the armory: a sealed pool the cron session draws from.
 - **Read-only on the project**, like oral and duck.
 - Questions must be answerable from *his own code and the course material* — no trivia
   about C standard paragraph numbers; the ambush tests ownership, not pedantry.
-- The cron does the firing; this skill never asks the questions itself in-session
+- The scheduled round does the firing; this skill never asks the questions itself in-session
   (surprise is the mechanism, and he has already seen the pool file path — told, not shown).
-- Pool exhausted (all `used:`) → the cron says "pool empty, run `sisyphus ambush` again"
+- Pool exhausted (all `used:`) → the round says "pool empty, run `sisyphus ambush` again"
   in one line and stops. No improvising questions from nothing.
+- **A fired round creates no card.** It may mark the entry `used:` and tell him where his
+  answer was thin; the own-words gate in the [learning contract](../../references/learning-contract.md)
+  applies here exactly as everywhere else, and "no automatic cards from any command" has no
+  ambush exception. Any external script that cards a stumble directly is breaking this rule,
+  not implementing it.
+- **Ambush outcomes are deliberately not recorded.** There is no result file and no schema:
+  one question a week is meant to be ignorable, and `stats` does not see it. If you want it
+  measured, that is a design change, not a missing feature — the pool file's `used:` dates
+  are the only trace by choice.
