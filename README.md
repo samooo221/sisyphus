@@ -260,10 +260,14 @@ repository does not provide; those are now fixed in the wording rather than pape
 authorized only, never paid); `ambush` no longer promises a Wednesday delivery the plugin
 does not install, and states that its outcomes are deliberately unrecorded; `harvest`
 retries a failed source instead of treating it as acquired; `moonshot` uses `harvest`'s
-filename scheme and checks for a collision before a file is saved; `oral` and the real-exam
+filename scheme and allocates every download name before the checklist is handed over,
+against the corpus dir and the rest of the list; releasing a reserved paper writes a
+`released` event rather than rewriting the inventory, so the reserve count stays
+enforceable and `drill` can tell permission from exposure; `oral` and the real-exam
 record allocate a sequence number like `drill` does, so two events on one day cannot
 collide; `drill grade` distinguishes an interrupted result from a finished one; `tutor`
-now writes the `learning-check` record that `stats` was already reading; `lookup` quotes
+now writes the `learning-check` record that `stats` was already reading, naming the
+stable id its pending-queue entry now carries; `lookup` quotes
 its `*` terms (unquoted, zsh kills the command outright), names all three meanings of
 exit 1, and stops pointing at one machine's prvak checkout. `prvak` is now listed as
 `lookup`'s requirement. Nothing in this release changes what any skill does when it works.

@@ -27,7 +27,7 @@ The daily counterpart to drill: drills measure, tutor teaches. The evidence this
    type: learning-check
    course: IZP
    date: 2026-10-02
-   misconception_id: <the label the pending-learning.md entry already carries>
+   misconception_id: <the pending-learning.md entry's id; an older entry logged without one gets an id assigned and written into that entry first, so both sides carry the same label>
    own_words: true            # did the student's own rewrite pass the gate?
    unaided_transfer: true     # did the closing check on a fresh problem hold?
    evidence_path: <path to the pending entry or the session note>
