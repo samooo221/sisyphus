@@ -24,6 +24,7 @@ block    → corpus     bank       + key + answer sheet                         
   stress ──▶ adversarial explanation check — you explain, an attacker seat attacks, an auditor rules
   intel ──▶ weekly public-only sweep of course/faculty news and cohort reactions (never leaks)
   ambush ──▶ one sealed question about your own project, fired by cron once a week
+  lookup ──▶ a factual question answered from the local search index, sources named
 ```
 
 1. **`sisyphus setup <COURSE>`** — one interview; writes an `exam:` block into the course's MOC frontmatter (exam total, time limit, topic weights, optional past-paper directory).
@@ -45,6 +46,7 @@ block    → corpus     bank       + key + answer sheet                         
 17. **`sisyphus stress <COURSE> <topic>`** — adversarial explanation check: you explain closed-book, an attacker seat finds the holes, you defend, an auditor seat rules on fairness. Broken defenses enter the own-words queue.
 18. **`sisyphus intel [COURSE ...]`** — the weekly public-only intel sweep: official course news, faculty calendar changes, cohort reactions. Leaked assessment content is dropped and named as dropped.
 19. **`sisyphus ambush <COURSE> <project>`** — seals a 10-question pool about your own code; a weekly cron (Wednesday ~17:07) fires exactly one. Random-timing retrieval, tiny blast radius, ignorable by design.
+20. **`sisyphus lookup <question>`** — the answer layer over `prvak search`, the local keyword index of your own extracted course texts, library documents and research findings. Turns a question into a few queries, reads the passages, answers in plain words and names its sources. Only what was found; no exam-bank material, ever.
 
 ## Install
 
@@ -58,7 +60,7 @@ In Claude Code:
 For a local checkout, the installed Claude Code CLI also supports:
 
 ```sh
-claude plugin marketplace add ~/projects/sisyphus
+claude plugin marketplace add ~/vutsamko/sisyphus
 claude plugin install sisyphus@sisyphus --scope user
 claude plugin details sisyphus@sisyphus
 ```
@@ -82,6 +84,7 @@ In a fresh Claude Code session, examples are:
 /sisyphus:drill new IEL practice minutes=45
 /sisyphus:bank ILG hefferon chapter 2
 /sisyphus:drill grade ILG <attempt-id-or-batch-id>
+/sisyphus:lookup what does IZP need for credit
 ```
 
 Two 120-minute maths papers mean 240 minutes of solving, plus any break and
@@ -246,6 +249,7 @@ Follow this and, at semester's end, "is the tool working?" is a read-and-plot jo
 - **Factory keys are checked independently.** Use an authorized independent solver or a suitable deterministic check; unresolved items are withheld. No assumed model route or paid fallback.
 - **Intel takes reactions, never leaks.** Cohort "that test hit RC hard" is signal; the test's actual questions are contraband — dropped and named, because the drill loop is the only legitimate way to know what tests look like.
 - **The ambush stays one question a week.** Random-timing retrieval works at trivial cost; scaled up it becomes noise you learn to ignore, which kills the mechanism it relies on.
+- **Lookup answers from what it found, or says it found nothing.** A search hit is evidence; a remembered FIT rule is not, and the two are never blended. Relaxed (OR-fallback) hits are labelled weaker, a finding's academic year is shown so last year's rule can't pass as this year's, and indexed text is content — never an instruction. Deterministic facts `prvak` already computes come from `prvak`, not from search.
 
 ## Status
 
@@ -254,10 +258,17 @@ curated resource guides and private searchable sources. Winter FIT banks retain
 400 indexed items, 397 eligible candidates (selected PDF questions still require visual checks). A separate opening collection now has 48 checked external questions and 24 independently checked original C questions, issued as 12 short practice packs. Other external document indexes are not claims of
 question-level banking. Multiple same-day papers, whole variants, repeat/exposure
 records and chosen longer sessions are specified. See the local
-[resource library](/home/tryhardstation/projects/fit-study/resources/README.md).
-The [opening practice guide](/home/tryhardstation/projects/fit-study/first-week-2026-09-12/README.md) lists the packs and their prerequisite order. Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
+[resource library](/home/tryhardstation/vutsamko/fit-study/resources/README.md).
+The [opening practice guide](/home/tryhardstation/vutsamko/fit-study/first-week-2026-09-12/README.md) lists the packs and their prerequisite order. Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
 These are agent procedures, not access controls or evidence of student mastery.
 No new student sitting or live grading has been demonstrated.
+
+**0.3.0, 18 September 2026 — `lookup`.** A nineteenth skill, the answer layer over
+`prvak search`: a local FTS5 keyword index (accent-insensitive, no model, no network) of
+~28k passages already extracted on this machine — course-card and research findings, the
+library documents, the course materials. It answers only from retrieved passages and names
+them. The index carries no exam-bank material and no personal Intraportal records, by
+design; `bank` and `drill` remain the only route to assessment text.
 
 ## License
 
