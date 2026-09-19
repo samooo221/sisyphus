@@ -33,5 +33,6 @@ no walls of text. Voice mode loses the thread in long sessions, so this round is
 - **Hard cap 8 questions.** A longer round is how voice mode derails and how gym rounds die.
 - One-line answers expected; a question needing more than one sentence moves to the next `daily`.
 - If voice mode is unavailable or derailing, the same list works as a text sprint — format is the requirement, not the medium.
-- Commute slot: audio overviews of his own notes (NotebookLM) serve the same dead time;
-  that's a manual setup outside this skill — point at the research report §4.2 if asked.
+- Commute slot: audio overviews of his own notes (NotebookLM) serve the same dead time.
+  That is a manual setup outside this plugin — roughly ten minutes to produce one per
+  topic, by hand, from notes he already owns. Nothing here does it for him.

@@ -17,8 +17,8 @@ The loop's quality is capped by corpus reality: a synthetic drill guesses the ex
    - The course's official pages (fit.vut.cz → course → Materials/Archive) and its e-learning course shell — anything behind the faculty login is **manual**, never bypassed.
    - Known public student archives (GitHub topics, community gists) — note provenance, they're lower trust.
    For each item: URL · what it is (midterm / final / solutions · year) · public-or-login.
-4. **Hand over the checklist.** Login-only items become numbered steps for HIM: open URL → download → save as `<CODE>-<year>-<kind>.pdf` in the corpus dir. He does this in his browser, logged in — an agent with his session is not part of this skill.
-5. **Verify what landed.** Each PDF: opens, page count sane, not an HTML page saved as `.pdf`, not a duplicate (same content as an existing file). Flag junk and name the gap.
+4. **Hand over the checklist.** Login-only items become numbered steps for HIM: open URL → download → save in the corpus dir under **`harvest`'s naming scheme**, so one corpus dir has one convention: `YYYY-<short-desc>.pdf` (year first, from the paper or its URL) or `undated-<short-desc>.pdf` when the year is unknown. Put the kind in the description — `2024-final.pdf`, `2024-final-b.pdf`, `2023-midterm.pdf`. Check the corpus dir for that exact name **before** telling him to save it; if it is taken by different content, give him the next free name in the step itself. He does this in his browser, logged in — an agent with his session is not part of this skill.
+5. **Verify what landed.** Each PDF: opens, page count sane, not an HTML page saved as `.pdf`, not a duplicate (same content as an existing file), and named to the scheme. Flag junk and name the gap. Verification is a second line of defence, not the collision check — that one happens in step 4, before anything is written.
 6. **Report:** public-found N · manual-click M · landed K · topics still uncovered (these become the `synthetic` disclaimer on future drills). Then: *"Run `sisyphus bank <CODE>` when you're done clicking."*
 
 ## Rules

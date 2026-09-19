@@ -1,5 +1,6 @@
 {
   "name": "sisyphus",
+  "description": "The sisyphus study engine: past-paper drills, hostile grading and student-owned explanations for an Obsidian vault.",
   "owner": {
     "name": "Samuel Pavlovič"
   },

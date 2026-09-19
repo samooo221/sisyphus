@@ -20,7 +20,7 @@ FIT programming projects end in a defense where the examiner pokes at *your* cod
    - *UB probes* — the exact spots valgrind/ASan would flag, if any
    Scale to the course: an IZP maze probe is exit codes and stdin parsing; a graphics project gets GL-state questions. 8–12 questions for a semester project.
 3. **Interrogate one question at a time, in chat.** Wait for the answer. Follow up once on a vague answer ("show me the line that guarantees that"), then move on. No hints while a question is live.
-4. **Write the verdict** to `<drills_dir>/<date>-oral.md`, with one line per stumble — the question, the weak spot in the answer, and what a passing answer contains:
+4. **Write the verdict** to `<drills_dir>/<date>-NN-oral.md`, allocating `NN` the way `drill` allocates an attempt ID (`01`, then `02`, …) so a second defense on the same day cannot overwrite the first. Date-only `<date>-oral.md` files from before this rule stay valid and are never renamed. One line per stumble — the question, the weak spot in the answer, and what a passing answer contains:
    ```yaml
    type: oral-result
    course: IZP
