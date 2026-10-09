@@ -1,0 +1,12 @@
+{
+  "description": "Claude Code plugin for exam drills and flashcards in Obsidian vaults. Prose skills, no app code.",
+  "topics": [
+    "claude-code",
+    "claude-code-plugin",
+    "obsidian",
+    "study-tools",
+    "spaced-repetition"
+  ],
+  "homepage": "",
+  "default_branch": "main"
+}
