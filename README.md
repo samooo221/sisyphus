@@ -4,6 +4,16 @@
 
 There is no app. sisyphus is a [Claude Code](https://claude.com/claude-code) plugin made of prose skills — the agent is the engine, your vault is the database. The vault stores your notes; private corpora store assessment text. Materials an agent reads are processed by whichever model provider you choose; this is not an offline inference engine.
 
+## What this is, and is not
+
+- It **is** a set of 19 prose skills for Claude Code. The skills are instructions, not programs.
+- It **is** a design for a study agent that keeps the human in the loop: you answer offline on the clock, a fresh session grades, and no flashcard exists until you explain the idea yourself.
+- It is **not** an app, a server or an offline model. It has no code and no automated tests.
+- It is **not** shown to work for other students. No outside student sitting or live grading has been demonstrated, and learning outcomes are not measured.
+- Built by Samuel Pavlovič, a first-year student, for his own study. He wrote the rules and directed Claude agents to draft and revise the skills.
+
+**See it first:** [`examples/`](examples/README.md) holds an invented course and a [transcript of `drill new` then `drill grade`](examples/transcript-drill-new-and-grade.md). The examples are hand-written illustrations, not recordings.
+
 ## The loop
 
 ```
@@ -57,10 +67,10 @@ In Claude Code:
 /plugin install sisyphus@sisyphus
 ```
 
-For a local checkout, the installed Claude Code CLI also supports:
+For a local checkout (run these in the folder that holds your clone), the installed Claude Code CLI also supports:
 
 ```sh
-claude plugin marketplace add ~/vutsamko/sisyphus
+claude plugin marketplace add ./sisyphus
 claude plugin install sisyphus@sisyphus --scope user
 claude plugin details sisyphus@sisyphus
 ```
@@ -241,9 +251,9 @@ Follow this and, at semester's end, "is the tool working?" is a read-and-plot jo
 - **Grade the stated rubric.** Require working where the question or frozen rubric requires it; do not invent explanation penalties after submission.
 - **Synthetic drills carry a disclaimer.** Generated-from-topics drills can test recall and application; their style and difficulty are not calibrated against a real paper.
 - **No automatic cards from any command.** Rewrite the concept yourself first; approval alone does not pass the gate. The [learning contract](references/learning-contract.md) also covers fitcheck, quizzes and grading.
-- **The tutor never states the answer.** This is load-bearing, not style: students practising with an unrestricted GPT tutor scored ~17% *worse* on a later exam with the AI removed, while a never-gives-answers tutor more than doubled classroom learning gains (Bastani et al., PNAS 2025; Kestin et al., Sci. Reports 2025). Hints go up a ladder, one rung per attempt; the student states every answer; sessions end with an unaided check.
+- **The tutor never states the answer.** This is load-bearing, not style: in a field study of about a thousand high-school maths students, those who practised with an unrestricted GPT tutor scored about 17% lower on a later exam, with the AI removed, than a control group (Bastani et al., PNAS 2025). In a Harvard physics trial, a tutor built never to give answers produced more than double the median learning gain of in-class active learning (Kestin et al., Scientific Reports 2025). I checked these figures against summaries of the papers, not the full texts. Hints go up a ladder, one rung per attempt; the student states every answer; sessions end with an unaided check.
 - **Hypothesis before diagnosis, diagnosis before fix.** `duck` takes your committed guess before it speaks (calibration you can't skip), explains the mechanism, then stops — the corrected line is yours to find and type.
-- **The garden mixes courses on purpose.** Interleaving trains *picking the method*, which blocked practice never tests — 61% vs 38% on a delayed test across 54 classrooms (Rohrer et al.). Consecutive questions from the same course would defeat it.
+- **The garden mixes courses on purpose.** Interleaving trains *picking the method*, which blocked practice never tests — 61% vs 38% on an unannounced test a month later, across 54 maths classes (Rohrer et al., 2020; checked against summaries, not the full paper). Consecutive questions from the same course would defeat it.
 - **90 minutes is the default, and you may choose longer.** Without an explicit extension, trim the brief to fit. A request for two full papers chooses their combined solving time; show breaks and review separately. Keep real commitments and prerequisite gates. Placeholder slots never block study.
 - **Previews prime, they don't teach.** Prequiz questions stay out of the deck; if one still matters after the lecture, it becomes a card through the normal gates — otherwise pretesting would smuggle un-earned cards into the schedule.
 - **Factory keys are checked independently.** Use an authorized independent solver or a suitable deterministic check; unresolved items are withheld. No assumed model route or paid fallback.
@@ -253,43 +263,13 @@ Follow this and, at semester's end, "is the tool working?" is a read-and-plot jo
 
 ## Status
 
-**0.3.1, 19 September 2026 — consistency pass.** No new skills. A review of the whole
-plugin found places where two skills disagreed, or where a skill promised something the
-repository does not provide; those are now fixed in the wording rather than papered over:
-`stress` no longer hardcodes model IDs and applies `factory`'s route rule (available and
-authorized only, never paid); `ambush` no longer promises a Wednesday delivery the plugin
-does not install, and states that its outcomes are deliberately unrecorded; `harvest`
-retries a failed source instead of treating it as acquired; `moonshot` uses `harvest`'s
-filename scheme and allocates every download name before the checklist is handed over,
-against the corpus dir and the rest of the list; releasing a reserved paper writes a
-`released` event rather than rewriting the inventory, so the reserve count stays
-enforceable and `drill` can tell permission from exposure; `oral` and the real-exam
-record allocate a sequence number like `drill` does, so two events on one day cannot
-collide; `drill grade` distinguishes an interrupted result from a finished one; `tutor`
-now writes the `learning-check` record that `stats` was already reading, naming the
-stable id its pending-queue entry now carries; `lookup` quotes
-its `*` terms (unquoted, zsh kills the command outright), names all three meanings of
-exit 1, and stops pointing at one machine's prvak checkout. `prvak` is now listed as
-`lookup`'s requirement. Nothing in this release changes what any skill does when it works.
+Version 0.3.1 (see [CHANGELOG.md](CHANGELOG.md)). What you can check in this repository:
 
-Local v0.2.5 preparation, 12 September 2026: all ten first-year FIT courses have
-curated resource guides and private searchable sources. Winter FIT banks retain
-400 indexed items, 397 eligible candidates (selected PDF questions still require visual checks). A separate opening collection now has 48 checked external questions and 24 independently checked original C questions, issued as 12 short practice packs. Other external document indexes are not claims of
-question-level banking. Multiple same-day papers, whole variants, repeat/exposure
-records and chosen longer sessions are specified. The author's own resource library and
-opening practice guide (`~/vutsamko/fit-study/resources/` and
-`~/vutsamko/fit-study/first-week-2026-09-12/`) are local to that machine and are not part
-of this repository — the paths are named here for the record, not as links to follow.
-Sealed keys now freeze the hashes of separate diagram assets and permitted tools. A pending or failed tutor check leaves the stage pending without erasing demonstrated progress.
-These are agent procedures, not access controls or evidence of student mastery.
-No new student sitting or live grading has been demonstrated.
+- 19 skills in `skills/`, two reference documents in `references/`, and a plugin manifest in `.claude-plugin/`.
+- A worked example on an invented course in `examples/`, hand-written, not recorded.
+- `lookup` needs `prvak`, a separate local search tool that is not public. Without it, `lookup` says it has nothing to read. The other eighteen skills do not need it.
 
-**0.3.0, 18 September 2026 — `lookup`.** A nineteenth skill, the answer layer over
-`prvak search`: a local FTS5 keyword index (accent-insensitive, no model, no network) of
-~28k passages already extracted on this machine — course-card and research findings, the
-library documents, the course materials. It answers only from retrieved passages and names
-them. The index carries no exam-bank material and no personal Intraportal records, by
-design; `bank` and `drill` remain the only route to assessment text.
+What is not shown: any use by someone other than the author, any measured effect on exam results, and any automated test of the skills. These are agent procedures, not access controls.
 
 ## License
 
